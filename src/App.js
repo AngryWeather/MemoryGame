@@ -1,7 +1,11 @@
+import MainDiv from "./components/MainDiv";
+
 
 function App() {
   return (
-    <div>Hello World</div>
+    <div>
+      <MainDiv></MainDiv>
+    </div>
 
   );
 }
