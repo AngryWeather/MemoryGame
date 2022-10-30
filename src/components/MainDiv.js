@@ -1,6 +1,11 @@
+import Cards from "./Cards";
+
+
 function MainDiv(props) {
     return (
-        <main></main>
+        <main>
+            <Cards></Cards>
+        </main>
     );
 }
 
