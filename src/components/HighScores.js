@@ -8,3 +8,5 @@ function HighScores(props) {
         </div>
     );
 }
+
+export default HighScores;
