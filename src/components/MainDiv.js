@@ -1,5 +1,5 @@
 import Cards from "./Cards";
-
+import "../styles/MainDiv.css";
 
 function MainDiv(props) {
     return (
