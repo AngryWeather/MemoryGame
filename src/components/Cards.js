@@ -10,11 +10,15 @@ function Cards(props) {
         ],
     );
 
+    const shuffleCards = () => {
+        console.log('shuffle');
+    }
+
     return (
         <div className="cards-container">
             {cards.map(card => {
                 return (
-                    <Card style={{backgroundColor: `${card}`}} text={card}></Card>
+                    <Card shuffleCards={shuffleCards} style={{backgroundColor: `${card}`}} text={card}></Card>
                 );
             })}
         </div>
