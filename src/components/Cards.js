@@ -12,7 +12,11 @@ function Cards(props) {
 
     return (
         <div className="cards-container">
-            <Card></Card>
+            {cards.map(card => {
+                return (
+                    <Card background={card} text={card}></Card>
+                );
+            })}
         </div>
     );
 }
