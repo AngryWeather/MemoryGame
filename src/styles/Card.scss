@@ -1,9 +1,13 @@
 .card {
     width: 10rem;
-    height: 15rem;
+    height: 12rem;
     margin: 1rem;
     border: 2px solid black;
     text-align: center;
+
+    p {
+        height: 10%;
+    }
 }
 
 .color {
