@@ -14,7 +14,7 @@ function Cards(props) {
         <div className="cards-container">
             {cards.map(card => {
                 return (
-                    <Card background={card} text={card}></Card>
+                    <Card style={{backgroundColor: `${card}`}} text={card}></Card>
                 );
             })}
         </div>
