@@ -23,6 +23,10 @@ function Cards(props) {
         setUsedCards(usedCards => [...usedCards, text]);
     }
 
+    const resetCards = () => {
+        setUsedCards([]);
+    }
+
     const isUsed = text => {
         return usedCards.includes(text);
     }
@@ -45,6 +49,7 @@ function Cards(props) {
 
                 return (
                     <Card
+                        resetCards={resetCards}
                         isUsed={isUsed}
                         addCardToUsedCards={addCardToUsedCards} 
                         shuffleCards={shuffleCards} 
