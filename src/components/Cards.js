@@ -17,20 +17,35 @@ function Cards(props) {
         ],
     );
 
-    // useEffect(() => {
-    //     console.log(cards.length);
-    // })
+    const [usedCards, setUsedCards] = useState([]);
+
+    const addCardToUsedCards = (text) => {
+        setUsedCards(usedCards => [...usedCards, text]);
+    }
+
+    useEffect(() => {
+        console.log(usedCards);
+    }, [usedCards]);
+ 
+    useEffect(() => {
+        shuffleCards();
+    }, []);
 
     const shuffleCards = () => {
         setCards(cards => [...cards], cards.sort(() => Math.random() - 0.5));
     }
 
-
     return (
         <div className="cards-container">
             {cards.map(card => {
+
                 return (
-                    <Card shuffleCards={shuffleCards} style={{backgroundColor: `${card}`}} text={card}></Card>
+                    <Card
+                        addCardToUsedCards={addCardToUsedCards} 
+                        shuffleCards={shuffleCards} 
+                        style={{backgroundColor: `${card}`}} 
+                        text={card}>
+                    </Card>
                 );
             })}
         </div>
