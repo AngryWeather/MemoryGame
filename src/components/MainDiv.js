@@ -23,11 +23,12 @@ function MainDiv(props) {
 
     const addCardToUsedCards = (text) => {
         setUsedCards(usedCards => [...usedCards, text]);
-        setScore(usedCards.length);
+        setScore(score+1);
     }
 
     const resetCards = () => {
         setUsedCards([]);
+        setScore(0);
     }
 
     const isUsed = text => {
@@ -42,6 +43,7 @@ function MainDiv(props) {
     const shuffleCards = () => {
         setCards(cards => [...cards], cards.sort(() => Math.random() - 0.5));
     }
+
     return (
         <main>
             <Cards
@@ -52,7 +54,10 @@ function MainDiv(props) {
                 shuffleCards={shuffleCards}
             >
             </Cards>
-            <HighScores></HighScores>
+            <HighScores
+                score={score}
+            >
+            </HighScores>
         </main>
     );
 }
