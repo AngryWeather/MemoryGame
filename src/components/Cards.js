@@ -18,9 +18,11 @@ function Cards(props) {
     );
 
     const [usedCards, setUsedCards] = useState([]);
+    const [score, setScore] = useState(0);
 
     const addCardToUsedCards = (text) => {
         setUsedCards(usedCards => [...usedCards, text]);
+        setScore(usedCards.length);
     }
 
     const resetCards = () => {
@@ -31,9 +33,6 @@ function Cards(props) {
         return usedCards.includes(text);
     }
 
-    useEffect(() => {
-        console.log(usedCards);
-    }, [usedCards]);
  
     useEffect(() => {
         shuffleCards();
