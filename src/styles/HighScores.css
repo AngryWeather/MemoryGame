@@ -1,3 +1,9 @@
 .high-scores-container {
   width: 20%;
+  margin-top: 3rem;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+}
+.high-scores-container p {
+  padding-bottom: 1rem;
 }/*# sourceMappingURL=HighScores.css.map */

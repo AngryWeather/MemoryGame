@@ -20,14 +20,22 @@ function MainDiv(props) {
 
     const [usedCards, setUsedCards] = useState([]);
     const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
 
     const addCardToUsedCards = (text) => {
         setUsedCards(usedCards => [...usedCards, text]);
         setScore(score+1);
     }
 
+    const isHighScore = () => {
+        return score > highScore;
+    }
+
     const resetCards = () => {
         setUsedCards([]);
+        if (isHighScore()) {
+            setHighScore(score);
+        }
         setScore(0);
     }
 
@@ -56,6 +64,7 @@ function MainDiv(props) {
             </Cards>
             <HighScores
                 score={score}
+                highScore={highScore}
             >
             </HighScores>
         </main>

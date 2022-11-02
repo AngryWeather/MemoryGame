@@ -7,7 +7,6 @@ function Card(props) {
     const addCardAndShuffle = () => {
         // check if the card has already been used
         if (props.isUsed(props.text)) {
-            console.log('game over');
             props.resetCards();
         } else {
             props.addCardToUsedCards(props.text);
