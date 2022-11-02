@@ -1,11 +1,17 @@
 import "../styles/Card.css";
-import { useEffect } from "react";
 
 
 function Card(props) {
+
+    // use function from Cards.js in order to add the card to the array of used cards
     const addCardAndShuffle = () => {
-        props.addCardToUsedCards(props.text);
-        props.shuffleCards();
+        // check if the card has already been used
+        if (props.isUsed(props.text)) {
+            console.log('game over');
+        } else {
+            props.addCardToUsedCards(props.text);
+            props.shuffleCards();
+        }
     }
 
 

@@ -23,6 +23,10 @@ function Cards(props) {
         setUsedCards(usedCards => [...usedCards, text]);
     }
 
+    const isUsed = text => {
+        return usedCards.includes(text);
+    }
+
     useEffect(() => {
         console.log(usedCards);
     }, [usedCards]);
@@ -41,6 +45,7 @@ function Cards(props) {
 
                 return (
                     <Card
+                        isUsed={isUsed}
                         addCardToUsedCards={addCardToUsedCards} 
                         shuffleCards={shuffleCards} 
                         style={{backgroundColor: `${card}`}} 
